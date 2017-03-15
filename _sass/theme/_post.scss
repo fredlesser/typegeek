@@ -1,0 +1,43 @@
+.post {
+  padding: 20px;
+  @include respond-to(medium) {
+    padding: 0;
+  }
+}
+
+
+
+.post-header {
+  display: flex;
+  margin: 0 0 20px 0;
+  
+  .col {
+    flex: 0 0 50%;
+  }
+  
+  h1 {
+    font-size: inherit;
+    margin-top: 0;
+  }
+}
+
+figure {
+  margin-bottom: 0;
+}
+
+.image {
+  // @include respond-to(medium) {
+  //   min-height: 550px;
+  // }
+  // max-height: 640px;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.post-description p {
+  margin: 0;
+}
+
+.post-meta {
+
+}

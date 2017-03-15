@@ -1,0 +1,27 @@
+.curtain {
+  background: $orange;
+  opacity: 0.3;
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  transition: $transition-duration;
+  transform: translateX(-110vw);
+  
+  &.in {
+    animation: curtainIn 1s 1s;
+  }
+}
+
+@keyframes curtainIn {
+  0% {
+      transform: translateX(-110vw);
+  }
+  50% {
+      transform: translateX();
+  }
+  100% {
+      transform: translateX(110vw);
+  }
+}

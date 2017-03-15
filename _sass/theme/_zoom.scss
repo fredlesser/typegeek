@@ -1,0 +1,16 @@
+.zoom-in,
+.zoom-out {
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1);
+}
+
+.zoom-in {
+    transform: scale(1.1);
+    transition-duration: .6s;
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1)
+}
+
+.zoom-out {
+    transform: scale(1);
+    transition-duration: .6s;
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1)
+}

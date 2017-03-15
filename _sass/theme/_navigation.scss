@@ -1,0 +1,104 @@
+nav {
+  background: $black;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  // transform-origin: left top;
+  // transform: rotate(-90deg) translateX(-100%);
+  // transform: translateX(-120vw);
+  opacity: 0;
+  z-index: -1;
+  transition: $transition-duration;
+  font-family: $mono;
+  
+  &::before {
+    content: 'index';
+    font-family: $serif;
+    color: #000;
+    font-size: 45vw;
+    position: absolute;
+    left: -3%;
+    top: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    li {
+      margin: 0;
+
+      a {
+        text-decoration: none;
+        color: $lightGray;
+        position: relative;
+      }
+    }
+  }
+
+  a.active {
+    color: $red;
+  }
+
+  a.active::before {
+    content: '';
+    border-top: 1px solid $red;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+  }
+}
+
+#toggle {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.toggle-container {
+  text-align: right;
+}
+
+.toggle-container::after {
+  content: 'Archive';
+  font-style: normal;
+  // text-transform: uppercase;
+  cursor: pointer;
+  background: $darkGray;
+  display: inline-block;
+  // margin-top: 3px;
+  padding: 0 5px;
+  color: #fff;
+}
+
+// Styles for the 'open' state, if the checkbox is checked
+// Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows
+
+#toggle:checked {
+  
+  & ~ .toggle-container::after {
+    content: 'close';
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  
+  // Open nav
+  & ~ .menu {
+    // transform: translateX(0);
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  // & ~ main {
+  //   transform: translateX(100vw);
+  // }
+}

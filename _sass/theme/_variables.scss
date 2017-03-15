@@ -1,0 +1,65 @@
+$lightGray: #f7f5f2;
+$gray: #dedede;
+$darkGray: #333132;
+$midGray: lighten($darkGray, 10%);
+$lightGray: lighten($darkGray, 30%);
+$black: #101010;
+$red: #d22f2e;
+$orange: #f04923;
+$pink: #DFCFC7;
+$green: #dbdfcc;
+$lightBlue: #5B72A2;
+
+$transition-duration: 0.5s;
+
+
+$mono: 'Inconsolata', monospace;
+$sans: 'Poppins', sans-serif;
+$serif: 'Crimson Text', serif;
+
+
+// Define defaults for each variable.
+
+// $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-family: $mono;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #111 !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+//Navigation menu with
+$navWidth: 80px;
+
+
+//Breakpoints
+$breakpoints: (
+  'small'  : 767px,
+  'medium' : 992px,
+  'large'  : 1200px,
+);
+
+@mixin respond-to($breakpoint) {
+  // Retrieves the value from the key
+  $value: map-get($breakpoints, $breakpoint);
+
+  // If the key exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}

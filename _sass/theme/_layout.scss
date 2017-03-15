@@ -1,0 +1,40 @@
+body {
+  transition: .6s;
+  transition-timing-function: cubic-bezier(.77, 0, .175, 1);
+  background: #ededed;
+  overflow-x: hidden
+}
+
+#wrap {
+  transition: $transition-duration;
+  width: 100%;
+  // min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  @include respond-to(medium) {
+    margin-top: -20px;
+  }
+  overflow-x: hidden;
+}
+
+header {
+  // height: 100px;
+}
+
+.site-title {
+  color: $orange;
+  background: $black;
+  font-weight: 600;
+  padding: 3px 5px;
+  display: inline-block;
+  text-transform: lowercase;
+  
+  &::after {
+    content: '.';
+  }
+}
+
+img.responsive {
+    width: auto;
+    height: 100%
+}
