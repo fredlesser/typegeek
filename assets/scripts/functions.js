@@ -67,4 +67,9 @@ $(document).ready(function() {
         }, 1000 * (t + 1));
     });
   }
+	
+	$('.image').click(function(){
+		$(this).toggleClass('zoom');
+		$('body').toggleClass('zoomed');
+	})
 });

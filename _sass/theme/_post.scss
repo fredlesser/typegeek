@@ -1,15 +1,16 @@
 .post {
   padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   @include respond-to(medium) {
-    padding: 0;
+    padding: 20px 0 0 0;
   }
 }
 
-
-
 .post-header {
   display: flex;
-  margin: 0 0 20px 0;
+  // margin: 0 0 20px 0;
   
   .col {
     flex: 0 0 50%;
@@ -21,17 +22,30 @@
   }
 }
 
-figure {
-  margin-bottom: 0;
-}
-
 .image {
-  // @include respond-to(medium) {
-  //   min-height: 550px;
-  // }
-  // max-height: 640px;
+  margin-bottom: 0;
+  max-height: 550px;
+  overflow: hidden;
   background-size: cover;
   background-color: #fff;
+  transition: $transition-duration;
+  transform: scale(1);
+  
+  &.zoom {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    max-height: none;
+    transform: scale(0.95);
+    transition-duration: .6s;
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1)
+    
+    img {
+      display: none;
+    }
+  }
 }
 
 .post-description p {

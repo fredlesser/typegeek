@@ -59,12 +59,10 @@ nav {
 
 #toggle {
   display: none;
-  position: absolute;
-  z-index: 2;
 }
 
 .toggle-container {
-  text-align: right;
+
 }
 
 .toggle-container::after {
@@ -72,10 +70,10 @@ nav {
   font-style: normal;
   // text-transform: uppercase;
   cursor: pointer;
-  background: $darkGray;
+  background: $orange;
   display: inline-block;
   // margin-top: 3px;
-  padding: 0 5px;
+  padding: 10px;
   color: #fff;
 }
 

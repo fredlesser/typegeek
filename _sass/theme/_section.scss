@@ -3,6 +3,7 @@
   transition-timing-function: cubic-bezier(.455, .03, .515, .955);
   // transform: translate(100%, 0);
   opacity: 0;
+  height: calc(100vh - 45px);
   
   &-inner {
     height: 100%;
