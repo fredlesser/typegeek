@@ -7,7 +7,7 @@
 
     {% include header.html %}
     <main id="wrap">
-      <section id="{{page.title | downcase}}" class="section">
+      <section id="{{page.title | downcase | handleize}}" class="section">
         <div class="section-inner">
           {{ content }}
         </div> 

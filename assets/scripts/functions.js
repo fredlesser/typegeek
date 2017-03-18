@@ -51,11 +51,16 @@
 								});
 								ga('send', 'pageview');
 							}
-						});
+							if ( $('.image').length ) {
+								$('.image').click(function(){
+									$(this).toggleClass('zoom');
+									$('body').toggleClass('zoomed');
+								})
+							}
+						} );
 			} );
 		} );
 	} );
-
 } )( jQuery, window.History );
 
 $(document).ready(function() {
@@ -67,9 +72,10 @@ $(document).ready(function() {
         }, 1000 * (t + 1));
     });
   }
-	
-	$('.image').click(function(){
-		$(this).toggleClass('zoom');
-		$('body').toggleClass('zoomed');
-	})
+	if ( $('.image').length ) {
+		$('.image').click(function(){
+			$(this).toggleClass('zoom');
+			$('body').toggleClass('zoomed');
+		})
+	}
 });
