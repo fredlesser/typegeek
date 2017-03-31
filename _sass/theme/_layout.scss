@@ -1,7 +1,7 @@
 body {
   transition: .6s;
   transition-timing-function: cubic-bezier(.77, 0, .175, 1);
-  background: #ededed;
+  background: #fff;
   overflow-x: hidden;
   
   &.zoomed,
@@ -15,11 +15,14 @@ body {
 }
 
 .site-header {
-  background: $black;
+  // background: $black;
   display: flex;
   align-items: center;
   position: relative;
   z-index: 2;
+  padding: 20px 0;
+  margin: 0 20px;
+  border-bottom: 1px dashed $lightGray;
 }
 
 .site-title {
@@ -27,7 +30,7 @@ body {
 }
 
 .site-logo {
-  color: $orange;
+  color: $black;
   font-weight: 600;
   padding: 10px;
   text-transform: lowercase;

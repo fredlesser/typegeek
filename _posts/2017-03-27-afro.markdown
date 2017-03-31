@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Afro"
+date:   2017-03-27 08:41:54 +0100
+categories: graphic art, culture
+image: /assets/images/afro.svg
+---
+This is a description

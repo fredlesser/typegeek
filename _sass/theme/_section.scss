@@ -1,9 +1,9 @@
 .section {
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(.455, .03, .515, .955);
+  // transition-duration: 1s;
+  // transition-timing-function: cubic-bezier(.455, .03, .515, .955);
   // transform: translate(100%, 0);
   opacity: 0;
-  height: calc(100vh - 45px);
+  height: calc(100vh - 65px);
   
   &-inner {
     height: 100%;

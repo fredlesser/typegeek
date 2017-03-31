@@ -14,11 +14,19 @@ layout: default
     <div class="col post-description">
       {{ content }}
     </div>
+    <div class="post-navigation">
+      {% if page.previous.url %}
+        <a class="prev" href="{{page.previous.url}}">&laquo; Previous</a>
+      {% endif %}
+      |
+      {% if page.next.url %}
+        <a class="next" href="{{page.next.url}}">Next &raquo;</a>
+      {% endif %}
+    </div>
   </header>
   <figure class="image" style="background-image: url({{ page.image }})">
     <img src="{{page.image}}" alt="{{page.title}}">
   </figure>
-
 
   
 
