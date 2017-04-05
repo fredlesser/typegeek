@@ -8,6 +8,10 @@ body {
   &.zoomed #wrap {
     overflow: hidden;
   }
+  
+  &.zoomed .section {
+    height: calc(100vh - 65px);
+  }
 }
 
 #wrap {
