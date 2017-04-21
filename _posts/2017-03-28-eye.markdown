@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Eye"
-date:   2017-03-28 08:41:54 +0100
-categories: graphic art, culture, music
-image: /assets/images/eye.svg
----
-This is a description

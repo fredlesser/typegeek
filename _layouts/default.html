@@ -3,19 +3,14 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="grid">
+      {% include header.html %}
+      <main id="wrap">
 
-    {% include header.html %}
-    <main id="wrap">
-      <section id="{{page.title | downcase | handleize}}" class="section">
-        <div class="section-inner">
-          {{ content }}
-        </div> 
-      </section>  
-    </main>
+            {{ content }}
 
-    {% include footer.html %}
-
+      </main>
+      {% include footer.html %}
   </body>
 
 </html>

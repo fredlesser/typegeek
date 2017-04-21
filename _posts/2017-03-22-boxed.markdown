@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Boxed"
-date:   2017-03-22 08:41:54 +0100
-categories: graphic art, typography, geometry
-image: /assets/images/boxed.svg
----
-This is a description

@@ -1,4 +1,4 @@
-nav {
+.menu {
   background: $black;
   top: 0;
   right: 0;
@@ -75,19 +75,19 @@ nav {
 }
 
 .toggle-container {
-
+  text-align: right;
 }
 
 .toggle-container::after {
-  content: 'Archive';
+  content: '|||';
+  transform: rotate(90deg);
   font-style: normal;
-  // text-transform: uppercase;
   cursor: pointer;
-  background: $black;
+  color: $black;
   display: inline-block;
-  // margin-top: 3px;
+  font-size: 20px;
   padding: 0 5px;
-  color: #fff;
+  
 }
 
 // Styles for the 'open' state, if the checkbox is checked
@@ -96,7 +96,8 @@ nav {
 #toggle:checked {
   
   & ~ .toggle-container::after {
-    content: 'close';
+    content: 'x';
+    transform: rotate(0);
     color: #fff;
     position: relative;
     z-index: 2;
