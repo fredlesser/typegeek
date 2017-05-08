@@ -1,42 +1,41 @@
+$navWidth: 500px;
+
 .menu {
-  background: $black;
+  background: #fff;
   top: 0;
   right: 0;
-  width: 100%;
+  width: $navWidth;
   height: 100%;
   position: fixed;
   // transform-origin: left top;
   // transform: rotate(-90deg) translateX(-100%);
-  // transform: translateX(-120vw);
-  opacity: 0;
-  visibility: hidden;
-  z-index: -1;
+  transform: translateX($navWidth);
+  // opacity: 0;
+  // z-index: -1;
+  // visibility: hidden;
   transition: $transition-duration;
-  font-family: $mono;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  box-shadow: 0 0 5px $gray;
   
-  &::before {
-    content: 'archive';
-    font-family: $serif;
-    color: #000;
-    font-size: 45vw;
-    position: absolute;
-    left: -3%;
-    top: 0;
-    z-index: -1;
-  }
+  // &::before {
+  //   content: 'archive';
+  //   font-family: $serif;
+  //   color: #000;
+  //   font-size: 45vw;
+  //   position: absolute;
+  //   left: -3%;
+  //   top: 0;
+  //   z-index: -1;
+  // }
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    @include respond-to(medium) {
-      columns: 2;
-    }
 
     li {
       margin: 0;
@@ -46,9 +45,8 @@
 
       a {
         text-decoration: none;
-        color: $orange;
         position: relative;
-        font-size: 120%;
+        margin: 0;
         
         &:hover {
           color: lighten($orange, 20%);
@@ -78,40 +76,106 @@
   text-align: right;
 }
 
-.toggle-container::after {
-  content: '|||';
-  transform: rotate(90deg);
-  font-style: normal;
-  cursor: pointer;
-  color: $black;
-  display: inline-block;
-  font-size: 20px;
-  padding: 0 5px;
-  
-}
+// .toggle-container::after {
+//   content: '|||';
+//   transform: rotate(90deg);
+//   font-style: normal;
+//   cursor: pointer;
+//   color: $black;
+//   display: inline-block;
+//   font-size: 20px;
+//   padding: 0 5px;
+//   
+// }
 
 // Styles for the 'open' state, if the checkbox is checked
 // Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows
 
 #toggle:checked {
   
-  & ~ .toggle-container::after {
-    content: 'x';
-    transform: rotate(0);
-    color: #fff;
-    position: relative;
-    z-index: 2;
-  }
+  // & ~ .toggle-container::after {
+  //   content: 'x';
+  //   transform: rotate(0);
+  //   color: #fff;
+  //   position: relative;
+  //   z-index: 2;
+  // }
   
   // Open nav
   & ~ .menu {
-    // transform: translateX(0);
-    opacity: 1;
-    z-index: 1;
-    visibility: visible;
+    transform: translateX(0);
+    // opacity: 1;
+    // z-index: 1;
+    // visibility: visible;
   }
   
-  // & ~ main {
-  //   transform: translateX(100vw);
-  // }
+  // Making the "X" icon using `:before` and `:after` pseudo-elements
+  & ~ .toggle-container .button--toggle {
+
+    &:before {
+      transform: translateY(-50%) rotate(45deg) scale(1.25);
+    }
+
+    &:after {
+      transform: translateY(-50%) rotate(-45deg) scale(1.25);
+    }
+    
+    span {
+      display: none;
+    }
+  }
+}
+
+// Making the "X" icon using `:before` and `:after` pseudo-elements
+// Initially hidden because `scale(0)` transformation
+
+.button--toggle {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  top: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: $transition-duration + 0.1;
+  z-index: 2;
+  
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+    border-radius: 5px;
+    transition: $transition-duration;
+  }
+
+  &:before {
+    transform: translateY(-50%) rotate(45deg) scale(0);
+  }
+
+  &:after {
+    transform: translateY(-50%) rotate(-45deg) scale(0);
+  }
+
+  span {
+    position: absolute;
+    background: $black;
+    height: 2px;
+    width: 100%;
+    top: 1px;
+    left: 0;
+    
+    &:nth-child(2) {
+      top: 9px;
+    }
+    
+    &:nth-child(3) {
+      top: 17px;
+    }
+  }
 }

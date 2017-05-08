@@ -1,7 +1,7 @@
 body {
   transition: .6s;
   transition-timing-function: cubic-bezier(.77, 0, .175, 1);
-  background: #fff;
+  background: $lightGray;
   overflow-x: hidden;
 }
 
@@ -33,10 +33,11 @@ body {
    align-content: center;
    padding: 0 20px;
    border-bottom: 1px solid #999;
+   @include respond-to(medium) { border: 0; }
    
    a {
      text-decoration: none;
-     color: #333;
+     color: $black;
      margin: 0 10px;
    }
  }
@@ -48,6 +49,10 @@ body {
  
  main {
    grid-area: main;
+ }
+ 
+ main.slide {
+   transform: translateX(-300px);
  }
  
  .site-footer {

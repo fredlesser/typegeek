@@ -7,11 +7,13 @@
    "post-footer";
   
   @include respond-to(medium) { 
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 50px;
+    padding: 50px 0;
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr repeat(2, minmax(400px, auto)) 1fr;
+    grid-template-rows: 2fr minmax(auto, 50px);
     grid-template-areas: 
-     "post-image post-content"
-     "post-image post-footer"; 
+     ". post-image post-content ."
+     ". post-image post-footer ."; 
   }
 }
 
@@ -35,14 +37,26 @@
 .post-image {
   grid-area: post-image;
   background: linear-gradient(to bottom, rgba(235,237,215,0.6) 0%,rgba(219,229,130,0.3) 100%);
+  @include respond-to(medium) { background: #fff; border: 1px dashed $midGray; }
   display: grid;
   justify-content: center;
 }
 
 .post-content {
   grid-area: post-content;
-  @include respond-to(medium) { align-self: center; }
+  @include respond-to(medium) { 
+    justify-self: stretch;
+    display: grid;
+    justify-content: center;
+    border: 1px dashed $midGray;
+    border-width: 1px 1px 1px 0;
+    background: #fff;
+  }
   justify-self: center;
+  
+  &__inner {
+    align-self: center;
+  }
 }
 
 .post-content p {
@@ -52,6 +66,7 @@
 
 .post-footer {
   grid-area: post-footer;
+  box-shadow: 3px 3px 0 0 #999;
   
   nav {
     display: grid;
@@ -60,7 +75,7 @@
     grid-gap: 1px;
     
     a {
-      background: #333;
+      background: $gray;
       text-align: center;
       color: #777;
       display: block;

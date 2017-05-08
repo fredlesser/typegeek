@@ -1,8 +1,8 @@
-$lightGray: #f7f5f2;
-$gray: #dedede;
+$gray: #f7f5f2;
+$lightGray: lighten($gray, 2%);
+$midGray:darken($gray, 25%);
 $darkGray: #333132;
-$midGray: lighten($darkGray, 10%);
-$lightGray: lighten($darkGray, 30%);
+
 $black: #101010;
 $red: #d22f2e;
 $orange: #f04923;
