@@ -16,7 +16,7 @@
     setTimeout(function(){
       $('.curtain').removeClass('in');
       $('.post').addClass('in');
-    }, 2000);
+    }, 3000);
 
 		if ( window.location === this.href ) {
 			return;

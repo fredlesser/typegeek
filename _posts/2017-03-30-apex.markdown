@@ -3,6 +3,6 @@ layout: post
 title:  "Apex"
 date:   2017-03-30 08:41:54 +0100
 categories: 
-image: /assets/images/letter-test.svg
+image: /assets/images/a.svg
 ---
-This is a description
+The point at the top of a character where two stroke lines meet.

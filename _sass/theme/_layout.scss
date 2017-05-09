@@ -32,7 +32,7 @@ body {
    grid-template-columns: repeat(2, 1fr);
    align-content: center;
    padding: 0 20px;
-   border-bottom: 1px solid #999;
+   border-bottom: 1px dotted $black;
    @include respond-to(medium) { border: 0; }
    
    a {
@@ -44,7 +44,10 @@ body {
  
  .site-title {
    font-family: 'Cherry Swash', cursive;
-   font-size: 20px;
+   font-size: 24px;
+   span {
+     color: $magenta;
+   }
  }
  
  main {

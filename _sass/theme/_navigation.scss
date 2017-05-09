@@ -1,5 +1,3 @@
-$navWidth: 500px;
-
 .menu {
   background: #fff;
   top: 0;
@@ -11,7 +9,7 @@ $navWidth: 500px;
   // transform: rotate(-90deg) translateX(-100%);
   transform: translateX($navWidth);
   // opacity: 0;
-  // z-index: -1;
+  z-index: 1;
   // visibility: hidden;
   transition: $transition-duration;
   display: flex;
@@ -49,19 +47,19 @@ $navWidth: 500px;
         margin: 0;
         
         &:hover {
-          color: lighten($orange, 20%);
+          color: $magenta;
         }
       }
     }
   }
 
   a.active {
-    color: $red;
+    color: $magenta;
   }
 
   a.active::before {
     content: '';
-    border-top: 1px solid $red;
+    border-top: 1px solid $magenta;
     position: absolute;
     width: 100%;
     top: 50%;
@@ -113,11 +111,11 @@ $navWidth: 500px;
   & ~ .toggle-container .button--toggle {
 
     &:before {
-      transform: translateY(-50%) rotate(45deg) scale(1.25);
+      transform: translateY(-50%) rotate(45deg) scale(1);
     }
 
     &:after {
-      transform: translateY(-50%) rotate(-45deg) scale(1.25);
+      transform: translateY(-50%) rotate(-45deg) scale(1);
     }
     
     span {
@@ -134,7 +132,7 @@ $navWidth: 500px;
   display: inline-block;
   width: 24px;
   height: 24px;
-  top: 5px;
+  top: 10px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -171,11 +169,11 @@ $navWidth: 500px;
     left: 0;
     
     &:nth-child(2) {
-      top: 9px;
+      top: 8px;
     }
     
     &:nth-child(3) {
-      top: 17px;
+      top: 15px;
     }
   }
 }
